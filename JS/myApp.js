@@ -5,56 +5,104 @@ function displayPets(pets) {
   const petContainer = document.querySelector("#pets-container .grid");
   petContainer.innerHTML = ""; // Clear existing pet cards
 
+  // Inside the displayPets function, add event listener for "Details" button
+  // Inside the displayPets function, add event listener for "Details" button
   pets.forEach((pet) => {
     const petCard = document.createElement("div");
     petCard.className = "bg-white shadow-lg rounded-lg p-4"; // Card styling
     petCard.innerHTML = `
-            <figure class="px-4 pt-4">
-                <img src="${pet.image}" alt="${
+      <figure class="px-4 pt-4">
+          <img src="${pet.image}" alt="${
       pet.pet_name
     }" class="rounded-lg object-cover w-full h-48" />
-            </figure>
-            <div class="card-body p-4">
-                <h2 class="card-title text-2xl font-bold text-black mb-2">${
-                  pet.pet_name
-                }</h2>
-                <div class="flex items-center mb-2 text-gray-600">
-                    <img src="./images/breed.png" alt="Breed Icon" class="mr-2">
-                    <span>Breed: ${pet.breed || "N/A"}</span>
-                </div>
-                <div class="flex items-center mb-2 text-gray-600">
-                    <img src="./images/birth.png" alt="Calendar Icon" class="mr-2">
-                    <span>Birth: ${pet.date_of_birth || "Unknown"}</span>
-                </div>
-                <div class="flex items-center mb-2 text-gray-600">
-                    <img src="./images/gender.png" alt="Gender Icon" class="mr-2">
-                    <span>Gender: ${pet.gender}</span>
-                </div>
-                <div class="flex items-center mb-2 text-gray-600">
-                    <img src="./images/price.png" alt="Price Icon" class="mr-2">
-                    <span>Price: ${
-                      pet.price !== null ? pet.price : "N/A"
-                    }</span>
-                </div>
-                <div class="card-actions justify-between mt-4">
-                    <div class="flex space-x-4">
-                        <button class="flex items-center border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2 like-btn" data-image="${
-                          pet.image
-                        }">
-                            <img src="./images/like.png" alt="Like Icon" class="mr-2"> Like
-                        </button>
-                        <button class="border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">Adopt</button>
-                        <button class="border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">Details</button>
-                    </div>
-                </div>
-            </div>
-        `;
+      </figure>
+      <div class="card-body p-4">
+          <h2 class="card-title text-2xl font-bold text-black mb-2">${
+            pet.pet_name
+          }</h2>
+          <div class="flex items-center mb-2 text-gray-600">
+              <img src="./images/breed.png" alt="Breed Icon" class="mr-2">
+              <span>Breed: ${pet.breed || "N/A"}</span>
+          </div>
+          <div class="flex items-center mb-2 text-gray-600">
+              <img src="./images/birth.png" alt="Calendar Icon" class="mr-2">
+              <span>Birth: ${pet.date_of_birth || "Unknown"}</span>
+          </div>
+          <div class="flex items-center mb-2 text-gray-600">
+              <img src="./images/gender.png" alt="Gender Icon" class="mr-2">
+              <span>Gender: ${pet.gender}</span>
+          </div>
+          <div class="flex items-center mb-2 text-gray-600">
+              <img src="./images/price.png" alt="Price Icon" class="mr-2">
+              <span>Price: ${pet.price !== null ? pet.price : "N/A"}</span>
+          </div>
+          <div class="card-actions justify-between mt-4">
+              <div class="flex space-x-4">
+                  <button class="flex items-center border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2 like-btn" data-image="${
+                    pet.image
+                  }">
+                      <img src="./images/like.png" alt="Like Icon" class="mr-2"> Like
+                  </button>
+                  <button class="border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">Adopt</button>
+                  <button class="border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2 details-btn">Details</button>
+              </div>
+          </div>
+      </div>
+    `;
     petContainer.appendChild(petCard);
 
     // Add event listener for the like button
     petCard.querySelector(".like-btn").addEventListener("click", function () {
       addToLikedImages(pet.image);
     });
+
+    // Add event listener for the details button
+    petCard
+      .querySelector(".details-btn")
+      .addEventListener("click", function () {
+        const modal = document.getElementById("my_modal_5");
+        // Populate the modal with the pet details
+        const modalContent = `
+        <figure class="px-4 pt-4">
+          <img src="${pet.image}" alt="${
+          pet.pet_name
+        }" class="rounded-lg object-cover w-full h-48" />
+      </figure>
+      <div class="card-body p-4">
+          <h2 class="card-title text-2xl font-bold text-black mb-2">${
+            pet.pet_name
+          }</h2>
+        <div class="flex items-center mb-2 text-gray-600">
+              <img src="./images/breed.png" alt="Breed Icon" class="mr-2">
+              <span>Breed: ${pet.breed || "N/A"}</span>
+          </div>
+          <div class="flex items-center mb-2 text-gray-600">
+              <img src="./images/birth.png" alt="Calendar Icon" class="mr-2">
+              <span>Birth: ${pet.date_of_birth || "Unknown"}</span>
+          </div>
+          <div class="flex items-center mb-2 text-gray-600">
+              <img src="./images/gender.png" alt="Gender Icon" class="mr-2">
+              <span>Gender: ${pet.gender}</span>
+          </div>
+          <div class="flex items-center mb-2 text-gray-600">
+              <img src="./images/price.png" alt="Price Icon" class="mr-2">
+              <span>Price: ${pet.price !== null ? pet.price : "N/A"}</span>
+          </div>
+          <hr/>
+          <p><span>Details: ${pet.pet_details || "Unknown"}</span></p>
+      `;
+        modal.querySelector(".modal-box").innerHTML =
+          modalContent +
+          `
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      `;
+
+        modal.showModal();
+      });
   });
 }
 
