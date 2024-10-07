@@ -14,7 +14,32 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Spinner styles */
+        .loader {
+            border: 8px solid #f3f3f3;
+            /* Light grey */
+            border-top: 8px solid #3498db;
+            /* Blue */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
 
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #spinner {
+            height: 100px;
+            /* Adjust based on your layout */
+        }
     </style>
     <!-- Include DaisyUI -->
     <script>
@@ -108,7 +133,7 @@
                         when looking at its layout. The point of using Lorem Ipsum is that it has a.
                     </p>
 
-                   
+
 
                     <div id="categories" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         <!-- Categories will be populated here -->
@@ -136,47 +161,29 @@
 
                     <div class="flex flex-col md:flex-row">
                         <!-- Left Side: Pet Cards -->
+
+                        
                         <div id="pets-container" class="w-full md:w-4/5 pr-4 mx-auto">
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <!-- Pet Cards will be injected here -->
                             </div>
                         </div>
+                        <div id="spinner" class="hidden">
+                            <div class="loader"></div> <!-- Spinner element -->
+                        </div>
 
                         <!-- Vertical Line -->
                         <div class="hidden md:block w-1 border-l border-gray-200 mx-4"></div>
 
-                        <!-- Right Side: Image Grid -->
                         <div id="liked-images" class="w-full md:w-1/5 mt-4 md:mt-0">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Image Gallery</h3>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Liked Image</h3>
                             <div class="grid grid-cols-2 gap-4">
-
-                                <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
-                                </div>
-                                <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
-                                </div>
-                                <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
-                                </div>
-                                <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
-                                </div>
-                                <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
-                                </div>
-                                <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
-                                </div>
-
+                                <!-- Liked images will be appended here -->
                             </div>
                         </div>
+                        
+
+                        
                     </div>
                 </div>
             </section>

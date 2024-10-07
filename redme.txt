@@ -1,0 +1,68 @@
+# Peddy Adoption Platform
+
+## Overview
+Peddy is a web application designed to facilitate pet adoption. The platform features an engaging user interface for browsing and adopting pets, along with filtering options based on categories. It also allows users to like images of pets, enhancing user interaction.
+
+## Technologies Used
+- **HTML**: For the structure of the web application.
+- **CSS**: Styled with Tailwind CSS and DaisyUI for responsive design and components.
+- **JavaScript**: For dynamic content rendering and interaction.
+- **Fetch API**: For retrieving data from an external API.
+
+## Features
+
+### HTML Structure
+1. **Header Section**: 
+   - Contains the logo and navigation links (Home, Shop, Contact).
+   - Responsive design with a mobile-friendly toggle button.
+
+2. **Main Banner**:
+   - Subheading and main heading promoting pet adoption.
+   - A descriptive paragraph explaining the platform's purpose.
+   - A call-to-action button to view more.
+
+3. **Category Filter**:
+   - Section for displaying various pet categories, populated dynamically through JavaScript.
+
+4. **Best Deal Section**:
+   - Displays pet cards with details such as name, breed, birth date, gender, and price.
+   - A sorting button to arrange pets by price.
+
+5. **Liked Images Section**:
+   - Allows users to view images of pets they liked.
+
+6. **Footer**: 
+   - Contains contact information, useful links, and a subscription input for user messages.
+
+### JavaScript Functionality
+1. **Dynamic Data Handling**:
+   - Fetches pet and category data from an external API (`https://openapi.programming-hero.com`).
+   - Stores fetched pet data in an array for easy access.
+
+2. **Display Functions**:
+   - `displayPets(pets)`: Renders pet cards in the UI based on the data provided. Each card includes buttons for liking, adopting, and viewing details.
+   - `displayNoDataMessage(message)`: Shows a message when no pets are available.
+
+3. **Fetching Data**:
+   - `fetchAllPets()`: Retrieves all pet data from the API.
+   - `fetchPetsByCategory(categoryName)`: Fetches pets based on selected categories, displaying a spinner during the loading process.
+   - `fetchCategories()`: Fetches and displays pet categories, allowing users to filter pets.
+
+4. **User Interaction**:
+   - `addToLikedImages(imageUrl)`: Adds liked pet images to a dedicated section.
+   - Sorting functionality: Pets can be sorted by price using the sort button, updating the displayed list accordingly.
+
+5. **Event Listeners**:
+   - Listens for clicks on category links to fetch pets in that category.
+   - Listens for clicks on the sort button to rearrange the pets by price.
+
+6. **Initial Data Load**:
+   - On page load, categories and pets are fetched and displayed.
+
+## Getting Started
+1. Clone the repository to your local machine.
+2. Open the `index.html` file in your browser to view the application.
+3. Ensure an internet connection is available to fetch data from the API.
+
+## Conclusion
+The Peddy Adoption Platform combines a visually appealing design with robust functionality to enhance the user experience in pet adoption. The project showcases the integration of modern web technologies for a seamless interactive experience.
