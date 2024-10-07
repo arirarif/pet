@@ -5,62 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peddy</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet">
+
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Black with opacity */
-        }
 
-        .modal-content {
-            background-color: #fff;
-            margin: 15% auto;
-            padding: 20px;
-            width: 80%;
-        }
-
-        .close-button {
-            float: right;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .spinner {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 999;
-        }
-
-        .spinner-border {
-            width: 3rem;
-            height: 3rem;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            animation: spin 2s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
     </style>
     <!-- Include DaisyUI -->
     <script>
@@ -154,47 +108,13 @@
                         when looking at its layout. The point of using Lorem Ipsum is that it has a.
                     </p>
 
-                    <!-- Category Buttons -->
+                   
+
                     <div id="categories" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <!-- Dogs Category -->
-                        <div id="category-dogs"
-                            class="category-card border border-gray-200 rounded-full p-6 bg-white shadow-md hover:shadow-lg hover:bg-[#e6f1f2] hover:border-[#0E7A811A] transition-all">
-                            <a href="#" class="flex flex-row items-center justify-center">
-                                <img src="./images/dogs.png" alt="Dogs"
-                                    class="w-16 h-16 object-cover rounded-full mb-3">
-                                <span class="text-lg font-semibold text-gray-800">Dogs</span>
-                            </a>
-                        </div>
-
-                        <!-- Cats Category -->
-                        <div id="category-cats"
-                            class="category-card border border-gray-200 rounded-full p-6 bg-white shadow-md hover:shadow-lg hover:bg-[#e6f1f2] hover:border-[#0E7A811A] transition-all">
-                            <a href="#" class="flex flex-row items-center justify-center">
-                                <img src="./images/cat.png" alt="Cats" class="w-16 h-16 object-cover rounded-full mb-3">
-                                <span class="text-lg font-semibold text-gray-800">Cats</span>
-                            </a>
-                        </div>
-
-                        <!-- Rabbits Category -->
-                        <div id="category-rabbits"
-                            class="category-card border border-gray-200 rounded-full p-6 bg-white shadow-md hover:shadow-lg hover:bg-[#e6f1f2] hover:border-[#0E7A811A] transition-all">
-                            <a href="#" class="flex flex-row items-center justify-center">
-                                <img src="./images/rabbit.png" alt="Rabbits"
-                                    class="w-16 h-16 object-cover rounded-full mb-3">
-                                <span class="text-lg font-semibold text-gray-800">Rabbits</span>
-                            </a>
-                        </div>
-
-                        <!-- Birds Category -->
-                        <div id="category-birds"
-                            class="category-card border border-gray-200 rounded-full p-6 bg-white shadow-md hover:shadow-lg hover:bg-[#e6f1f2] hover:border-[#0E7A811A] transition-all">
-                            <a href="#" class="flex flex-row items-center justify-center">
-                                <img src="./images/parrot.png" alt="Birds"
-                                    class="w-16 h-16 object-cover rounded-full mr-3">
-                                <span class="text-lg font-semibold text-gray-800">Birds</span>
-                            </a>
-                        </div>
+                        <!-- Categories will be populated here -->
                     </div>
+
+
                 </div>
             </section>
 
@@ -216,164 +136,9 @@
 
                     <div class="flex flex-col md:flex-row">
                         <!-- Left Side: Pet Cards -->
-                        <div id="pets-container" class="w-full md:w-4/5 pr-4">
+                        <div id="pets-container" class="w-full md:w-4/5 pr-4 mx-auto">
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <!-- Pet Card 1 -->
-                                <div class="card w-full bg-white shadow-lg rounded-lg">
-                                    <!-- Image Section -->
-                                    <figure class="px-4 pt-4">
-                                        <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                            alt="Mister Tartosh" class="rounded-lg object-cover w-full h-48" />
-                                    </figure>
-
-                                    <!-- Card Body -->
-                                    <div class="card-body p-4">
-                                        <!-- Header Title -->
-                                        <h2 class="card-title text-2xl font-bold text-black mb-2">Mister Tartosh</h2>
-
-                                        <!-- Pet Info Section -->
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/breed.png" alt="Breed Icon" class="mr-2">
-                                            Breed: Golden Retriever
-                                        </div>
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/birth.png" alt="Calendar Icon" class="mr-2">
-                                            Birth: 2024
-                                        </div>
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/gender.png" alt="Gender Icon" class="mr-2">
-                                            Gender: Female
-                                        </div>
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/price.png" alt="Price Icon" class="mr-2">
-                                            Price: $1995
-                                        </div>
-
-                                        <!-- Card Footer with Buttons -->
-                                        <div class="card-actions justify-between mt-4">
-                                            <!-- Button Row -->
-                                            <div class="flex space-x-4">
-                                                <!-- Like Button -->
-                                                <button
-                                                    class="flex items-center border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">
-                                                    <img src="./images/like.png" alt="Like Icon" class="mr-2"> Like
-                                                </button>
-
-                                                <!-- Adopt Button -->
-                                                <button
-                                                    class="border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">Adopt</button>
-
-                                                <!-- Details Button -->
-                                                <button
-                                                    class="border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Pet Card 2 -->
-                                <div class="card w-full bg-white shadow-lg rounded-lg">
-                                    <!-- Image Section -->
-                                    <figure class="px-4 pt-4">
-                                        <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                            alt="Mister Tartosh" class="rounded-lg object-cover w-full h-48" />
-                                    </figure>
-
-                                    <!-- Card Body -->
-                                    <div class="card-body p-4">
-                                        <!-- Header Title -->
-                                        <h2 class="card-title text-2xl font-bold text-black mb-2">Mister Tartosh</h2>
-
-                                        <!-- Pet Info Section -->
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/breed.png" alt="Breed Icon" class="mr-2">
-                                            Breed: Golden Retriever
-                                        </div>
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/birth.png" alt="Calendar Icon" class="mr-2">
-                                            Birth: 2024
-                                        </div>
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/gender.png" alt="Gender Icon" class="mr-2">
-                                            Gender: Female
-                                        </div>
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/price.png" alt="Price Icon" class="mr-2">
-                                            Price: $1995
-                                        </div>
-
-                                        <!-- Card Footer with Buttons -->
-                                        <div class="card-actions justify-between mt-4">
-                                            <!-- Button Row -->
-                                            <div class="flex space-x-4">
-                                                <!-- Like Button -->
-                                                <button
-                                                    class="flex items-center border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">
-                                                    <img src="./images/like.png" alt="Like Icon" class="mr-2"> Like
-                                                </button>
-
-                                                <!-- Adopt Button -->
-                                                <button
-                                                    class="border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">Adopt</button>
-
-                                                <!-- Details Button -->
-                                                <button
-                                                    class="border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Pet Card 3 -->
-                                <div class="card w-full bg-white shadow-lg rounded-lg">
-                                    <!-- Image Section -->
-                                    <figure class="px-4 pt-4">
-                                        <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                            alt="Mister Tartosh" class="rounded-lg object-cover w-full h-48" />
-                                    </figure>
-
-                                    <!-- Card Body -->
-                                    <div class="card-body p-4">
-                                        <!-- Header Title -->
-                                        <h2 class="card-title text-2xl font-bold text-black mb-2">Mister Tartosh</h2>
-
-                                        <!-- Pet Info Section -->
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/breed.png" alt="Breed Icon" class="mr-2">
-                                            Breed: Golden Retriever
-                                        </div>
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/birth.png" alt="Calendar Icon" class="mr-2">
-                                            Birth: 2024
-                                        </div>
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/gender.png" alt="Gender Icon" class="mr-2">
-                                            Gender: Female
-                                        </div>
-                                        <div class="flex items-center mb-2 text-gray-600">
-                                            <img src="./images/price.png" alt="Price Icon" class="mr-2">
-                                            Price: $1995
-                                        </div>
-
-                                        <!-- Card Footer with Buttons -->
-                                        <div class="card-actions justify-between mt-4">
-                                            <!-- Button Row -->
-                                            <div class="flex space-x-4">
-                                                <!-- Like Button -->
-                                                <button
-                                                    class="flex items-center border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">
-                                                    <img src="./images/like.png" alt="Like Icon" class="mr-2"> Like
-                                                </button>
-
-                                                <!-- Adopt Button -->
-                                                <button
-                                                    class="border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">Adopt</button>
-
-                                                <!-- Details Button -->
-                                                <button
-                                                    class="border border-[#0E7A81] text-[#0E7A81] rounded-lg px-4 py-2">Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!-- Pet Cards will be injected here -->
                             </div>
                         </div>
 
@@ -386,30 +151,30 @@
                             <div class="grid grid-cols-2 gap-4">
 
                                 <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Pet Image"
-                                        class="object-cover w-full h-32 rounded-lg">
+                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
                                 </div>
                                 <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Pet Image"
-                                        class="object-cover w-full h-32 rounded-lg">
+                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
                                 </div>
                                 <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Pet Image"
-                                        class="object-cover w-full h-32 rounded-lg">
+                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
                                 </div>
                                 <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Pet Image"
-                                        class="object-cover w-full h-32 rounded-lg">
+                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
                                 </div>
                                 <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Pet Image"
-                                        class="object-cover w-full h-32 rounded-lg">
+                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
                                 </div>
                                 <div id="liked-img-1" class="bg-gray-200 rounded-lg">
-                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Pet Image"
-                                        class="object-cover w-full h-32 rounded-lg">
+                                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                        alt="Pet Image" class="object-cover w-full h-32 rounded-lg">
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
